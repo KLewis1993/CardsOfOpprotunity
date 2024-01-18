@@ -41,6 +41,7 @@ class GameViewModel: ObservableObject {
         selectedCardIndex2 = nil
     }
     
+    @MainActor
     func fetchCardImages() async {
         guard !isShowingHand else {
             resetBoard()
@@ -56,7 +57,9 @@ class GameViewModel: ObservableObject {
             self.cardTwoImage = try await fetchedImageTwo
             self.isShowingHand = true
         } catch {
-            processError(error)
+            DispatchQueue.main.async {
+                self.processError(error)
+            }
         }
     }
     

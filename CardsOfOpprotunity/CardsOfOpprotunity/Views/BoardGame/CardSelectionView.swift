@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardSelectionView: View {
-    @Binding  var selectedCardIndex: Int?
+    @Binding var selectedCardIndex: Int?
     var isOffsetPositive: Bool
     
     private var offsetValue: CGFloat {
@@ -21,7 +21,6 @@ struct CardSelectionView: View {
                 Image("cardBack")
                     .resizable()
                     .scaledToFit()
-                    .animation(.easeInOut, value: selectedCardIndex)
                     .offset(y: selectedCardIndex == index ? offsetValue : 0)
                     .onTapGesture {
                         if selectedCardIndex == index {
