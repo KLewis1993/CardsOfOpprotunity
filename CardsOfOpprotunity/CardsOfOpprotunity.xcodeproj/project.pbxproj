@@ -14,6 +14,14 @@
 		188B8CB22B55E6CE00913535 /* CardsOfOpprotunityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CB12B55E6CE00913535 /* CardsOfOpprotunityTests.swift */; };
 		188B8CBC2B55E6CE00913535 /* CardsOfOpprotunityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CBB2B55E6CE00913535 /* CardsOfOpprotunityUITests.swift */; };
 		188B8CBE2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CBD2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift */; };
+		1B5E716A2B5789D300C3920B /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5E71692B5789D300C3920B /* NetworkingError.swift */; };
+		1B5E716C2B5796DB00C3920B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5E716B2B5796DB00C3920B /* GameViewModel.swift */; };
+		1B5E716F2B57975800C3920B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5E716E2B57975800C3920B /* Card.swift */; };
+		1B5E71762B579F0800C3920B /* BoardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5E71752B579F0800C3920B /* BoardGameView.swift */; };
+		1B5E71782B57ABA200C3920B /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5E71772B57ABA200C3920B /* LoadingButton.swift */; };
+		1B83D8322B58EA5E007840F8 /* CardSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8312B58EA5E007840F8 /* CardSelectionView.swift */; };
+		1B83D8342B58F229007840F8 /* CardGameNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8332B58F229007840F8 /* CardGameNetworkManager.swift */; };
+		1B83D8362B58FDB6007840F8 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8352B58FDB6007840F8 /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		188B8CB72B55E6CE00913535 /* CardsOfOpprotunityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsOfOpprotunityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188B8CBB2B55E6CE00913535 /* CardsOfOpprotunityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpprotunityUITests.swift; sourceTree = "<group>"; };
 		188B8CBD2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpprotunityUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1B5E71692B5789D300C3920B /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		1B5E716B2B5796DB00C3920B /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		1B5E716E2B57975800C3920B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		1B5E71752B579F0800C3920B /* BoardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameView.swift; sourceTree = "<group>"; };
+		1B5E71772B57ABA200C3920B /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		1B83D8312B58EA5E007840F8 /* CardSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionView.swift; sourceTree = "<group>"; };
+		1B83D8332B58F229007840F8 /* CardGameNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameNetworkManager.swift; sourceTree = "<group>"; };
+		1B83D8352B58FDB6007840F8 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				188B8CA02B55E6CD00913535 /* CardsOfOpprotunityApp.swift */,
-				188B8CA22B55E6CD00913535 /* ContentView.swift */,
-				188B8CA42B55E6CE00913535 /* Assets.xcassets */,
+				1B5E71742B579ED400C3920B /* Resources */,
+				1B5E71712B579EAD00C3920B /* Utilities */,
+				1B5E71702B579E9900C3920B /* Views */,
+				1B5E716D2B57975100C3920B /* Model */,
 				188B8CA62B55E6CE00913535 /* Preview Content */,
 			);
 			path = CardsOfOpprotunity;
@@ -125,6 +143,52 @@
 				188B8CBD2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift */,
 			);
 			path = CardsOfOpprotunityUITests;
+			sourceTree = "<group>";
+		};
+		1B5E716D2B57975100C3920B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B5E716E2B57975800C3920B /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B5E71702B579E9900C3920B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				188B8CA22B55E6CD00913535 /* ContentView.swift */,
+				1B5E71722B579EB600C3920B /* BoardGame */,
+				1B5E71772B57ABA200C3920B /* LoadingButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1B5E71712B579EAD00C3920B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1B5E71692B5789D300C3920B /* NetworkingError.swift */,
+				1B83D8332B58F229007840F8 /* CardGameNetworkManager.swift */,
+				1B83D8352B58FDB6007840F8 /* View+Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1B5E71722B579EB600C3920B /* BoardGame */ = {
+			isa = PBXGroup;
+			children = (
+				1B5E716B2B5796DB00C3920B /* GameViewModel.swift */,
+				1B5E71752B579F0800C3920B /* BoardGameView.swift */,
+				1B83D8312B58EA5E007840F8 /* CardSelectionView.swift */,
+			);
+			path = BoardGame;
+			sourceTree = "<group>";
+		};
+		1B5E71742B579ED400C3920B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				188B8CA42B55E6CE00913535 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +321,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B83D8342B58F229007840F8 /* CardGameNetworkManager.swift in Sources */,
 				188B8CA32B55E6CD00913535 /* ContentView.swift in Sources */,
+				1B5E71782B57ABA200C3920B /* LoadingButton.swift in Sources */,
+				1B5E716C2B5796DB00C3920B /* GameViewModel.swift in Sources */,
+				1B5E716F2B57975800C3920B /* Card.swift in Sources */,
+				1B5E71762B579F0800C3920B /* BoardGameView.swift in Sources */,
+				1B83D8322B58EA5E007840F8 /* CardSelectionView.swift in Sources */,
+				1B5E716A2B5789D300C3920B /* NetworkingError.swift in Sources */,
+				1B83D8362B58FDB6007840F8 /* View+Extensions.swift in Sources */,
 				188B8CA12B55E6CD00913535 /* CardsOfOpprotunityApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
