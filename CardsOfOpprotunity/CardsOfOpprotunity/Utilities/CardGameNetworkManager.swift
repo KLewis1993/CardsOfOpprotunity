@@ -9,14 +9,17 @@ import SwiftUI
 
 struct CardGameNetworkManager {
     static func fetchCards(amount: Int = 2) async throws -> [Card] {
-        guard let baseURL = URL(string: "https://deckofcardsapi.com/api/deck/new") else { throw NetworkingError.badBaseURL
+        guard let baseURL = URL(string: "https://deckofcardsapi.com/api/deck/new") else { 
+            throw NetworkingError.badBaseURL
         }
         
         let builtURL = baseURL.appendingPathComponent("draw").appendingPathComponent("/")
         var components = URLComponents(url: builtURL, resolvingAgainstBaseURL: true)
         components?.queryItems = [URLQueryItem(name: "count", value: "\(amount)")]
         
-        guard let queryURL = components?.url else { throw NetworkingError.badBuiltURL }
+        guard let queryURL = components?.url else {
+            throw NetworkingError.badBuiltURL
+        }
         
         let (data, response) = try await URLSession.shared.data(from: queryURL)
         try validate(response)
@@ -29,9 +32,10 @@ struct CardGameNetworkManager {
         }
     }
     
-    // Fetch Image with async/await
     static func fetchImage(for card: Card) async throws -> Image? {
-        guard let url = URL(string: card.image) else { throw NetworkingError.badBaseURL }
+        guard let url = URL(string: card.image) else {
+            throw NetworkingError.badBaseURL
+        }
         let (data, response) = try await URLSession.shared.data(from: url)
         
         try validate(response)
@@ -43,6 +47,7 @@ struct CardGameNetworkManager {
         }
     }
     
+    ///Checks if the response status code is equal `200`. If the status code is not `200` an error is thrown.
     private static func validate(_ response: URLResponse) throws {
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {

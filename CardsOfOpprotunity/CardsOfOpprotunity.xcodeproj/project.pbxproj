@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		188B8CA12B55E6CD00913535 /* CardsOfOpprotunityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CA02B55E6CD00913535 /* CardsOfOpprotunityApp.swift */; };
+		188B8CA12B55E6CD00913535 /* CardsOfOpportunityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CA02B55E6CD00913535 /* CardsOfOpportunityApp.swift */; };
 		188B8CA32B55E6CD00913535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CA22B55E6CD00913535 /* ContentView.swift */; };
 		188B8CA52B55E6CE00913535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188B8CA42B55E6CE00913535 /* Assets.xcassets */; };
 		188B8CA82B55E6CE00913535 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188B8CA72B55E6CE00913535 /* Preview Assets.xcassets */; };
@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		188B8C9D2B55E6CD00913535 /* CardsOfOpprotunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsOfOpprotunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		188B8CA02B55E6CD00913535 /* CardsOfOpprotunityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpprotunityApp.swift; sourceTree = "<group>"; };
+		188B8CA02B55E6CD00913535 /* CardsOfOpportunityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpportunityApp.swift; sourceTree = "<group>"; };
 		188B8CA22B55E6CD00913535 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		188B8CA42B55E6CE00913535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		188B8CA72B55E6CE00913535 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		188B8C9F2B55E6CD00913535 /* CardsOfOpprotunity */ = {
 			isa = PBXGroup;
 			children = (
-				188B8CA02B55E6CD00913535 /* CardsOfOpprotunityApp.swift */,
+				188B8CA02B55E6CD00913535 /* CardsOfOpportunityApp.swift */,
 				1B5E71742B579ED400C3920B /* Resources */,
 				1B5E71712B579EAD00C3920B /* Utilities */,
 				1B5E71702B579E9900C3920B /* Views */,
@@ -330,7 +330,7 @@
 				1B83D8322B58EA5E007840F8 /* CardSelectionView.swift in Sources */,
 				1B5E716A2B5789D300C3920B /* NetworkingError.swift in Sources */,
 				1B83D8362B58FDB6007840F8 /* View+Extensions.swift in Sources */,
-				188B8CA12B55E6CD00913535 /* CardsOfOpprotunityApp.swift in Sources */,
+				188B8CA12B55E6CD00913535 /* CardsOfOpportunityApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

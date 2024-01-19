@@ -11,17 +11,17 @@ import SwiftUI
 class GameViewModel: ObservableObject {
     @Published var cardOneImage: Image? = nil
     @Published var cardTwoImage: Image? = nil
-    @Published var selectedCardIndex1: Int? = nil
-    @Published var selectedCardIndex2: Int? = nil
-    @Published var playOneScore: Int = 0
-    @Published var playTwoScore: Int = 0
+    @Published var firstSelectedCardIndex: Int? = nil
+    @Published var secondSelectedCardIndex: Int? = nil
+    @Published var playerOneScore: Int = 0
+    @Published var playerTwoScore: Int = 0
     @Published var isShowingHand: Bool = false
     @Published var alertMessage: String = ""
     @Published var gameOver: Bool = false
     @Published var showAlert: Bool = false
     
-    var isAnyCardUnselected: Bool {
-        selectedCardIndex1 == nil || selectedCardIndex2 == nil
+    var userSelectedCards: Bool {
+        firstSelectedCardIndex == nil || secondSelectedCardIndex == nil
     }
     
     var buttonTitle: String {
@@ -39,8 +39,8 @@ class GameViewModel: ObservableObject {
         isShowingHand = false
         cardOneImage = nil
         cardTwoImage = nil
-        selectedCardIndex1 = nil
-        selectedCardIndex2 = nil
+        firstSelectedCardIndex = nil
+        secondSelectedCardIndex = nil
     }
     
     func fetchCards() async -> [Card] {
@@ -58,34 +58,34 @@ class GameViewModel: ObservableObject {
         return []
     }
     
-    
-    
     private func determineOutcome(_ playerOne: Int, _ playerTwo: Int) {
+        //Ensure one of the players has reached the score of '3'
         guard playerOne == 3 || playerTwo == 3 else {
             return
         }
         
         self.gameOver = true
         
-        if playOneScore > playerTwo {
-            print("Player 1 Won with: \(playOneScore)")
+        if playerOneScore > playerTwo {
+            //TODO: Add a UI element to display who won
+            print("Player 1 Won with: \(playerOneScore)")
         } else {
-            print("Player 2 Won with: \(playTwoScore)")
+            //TODO: Add a UI element to display who won
+            print("Player 2 Won with: \(playerTwoScore)")
         }
     }
     
     private func adjustScore(_ playerOne: Int, _ playerTwo: Int) {
         if playerOne > playerTwo {
-            playOneScore += 1
+            playerOneScore += 1
         } else {
-            playTwoScore += 1
+            playerTwoScore += 1
         }
         
-        determineOutcome(playOneScore, playTwoScore)
+        determineOutcome(playerOneScore, playerTwoScore)
     }
     
     func revealCards() async throws {
-        
         let cards = await fetchCards()
         
         guard !cards.isEmpty, cards.count == 2 else {
@@ -97,10 +97,10 @@ class GameViewModel: ObservableObject {
             self.cardTwoImage = try await CardGameNetworkManager.fetchImage(for: cards[1])
             self.isShowingHand = true
             
+            //Prevent incrementing the score if the users' card values are the same
             if cards[0].rank != cards[1].rank {
                 adjustScore(cards[0].rank, cards[1].rank)
             }
-            
         } catch {
             throw NetworkingError.invalidData
         }

@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct BoardGameView: View {
-    
     @ObservedObject var viewModel = GameViewModel()
     
     var body: some View {
         ZStack {
             VStack(spacing: 130) {
-                CardSelectionView(selectedCardIndex: $viewModel.selectedCardIndex1, isOffsetPositive: true)
-                CardSelectionView(selectedCardIndex: $viewModel.selectedCardIndex2, isOffsetPositive: false)
+                CardSelectionView(selectedCardIndex: $viewModel.firstSelectedCardIndex, isOffsetPositive: true)
+                CardSelectionView(selectedCardIndex: $viewModel.secondSelectedCardIndex, isOffsetPositive: false)
             }
             .hidden(viewModel.isShowingHand)
             
@@ -39,10 +38,9 @@ struct BoardGameView: View {
                         
                     }
                 }
-                .disabled(viewModel.isAnyCardUnselected)
-                .opacity(viewModel.isAnyCardUnselected ? 0.8 : 1)
-                .animation(.easeInOut, value: viewModel.isAnyCardUnselected)
-                
+                .disabled(viewModel.userSelectedCards)
+                .opacity(viewModel.userSelectedCards ? 0.8 : 1)
+                .animation(.easeInOut, value: viewModel.userSelectedCards)
                 Spacer()
             }
         }
