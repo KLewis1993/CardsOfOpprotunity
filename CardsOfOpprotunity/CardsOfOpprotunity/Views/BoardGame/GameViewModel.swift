@@ -20,6 +20,12 @@ class GameViewModel: ObservableObject {
     @Published var gameOver: Bool = false
     @Published var showAlert: Bool = false
     
+    private var networkManager: CardGameNetworkManagerProtocol
+    
+    init(networkManager: CardGameNetworkManagerProtocol = CardGameNetworkManager()) {
+        self.networkManager = networkManager
+    }
+    
     var userSelectedCards: Bool {
         firstSelectedCardIndex == nil || secondSelectedCardIndex == nil
     }
@@ -49,7 +55,7 @@ class GameViewModel: ObservableObject {
             return []
         }
         do {
-            return try await CardGameNetworkManager.fetchCards()
+            return try await networkManager.fetchCards()
         } catch {
             DispatchQueue.main.async {
                 self.processError(error)
@@ -58,7 +64,7 @@ class GameViewModel: ObservableObject {
         return []
     }
     
-    private func determineOutcome(_ playerOne: Int, _ playerTwo: Int) {
+    func determineOutcome(_ playerOne: Int, _ playerTwo: Int) {
         //Ensure one of the players has reached the score of '3'
         guard playerOne == 3 || playerTwo == 3 else {
             return
@@ -75,8 +81,13 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    private func adjustScore(_ playerOne: Int, _ playerTwo: Int) {
-        if playerOne > playerTwo {
+    func adjustScore(_ cardOneRank: Int, _ cardTwoRank: Int) {
+        //Prevent incrementing the score if the users' card values are the same
+        guard cardOneRank != cardTwoRank else {
+            return
+        }
+        
+        if cardOneRank > cardTwoRank {
             playerOneScore += 1
         } else {
             playerTwoScore += 1
@@ -93,14 +104,11 @@ class GameViewModel: ObservableObject {
         }
         
         do {
-            self.cardOneImage = try await CardGameNetworkManager.fetchImage(for: cards[0])
-            self.cardTwoImage = try await CardGameNetworkManager.fetchImage(for: cards[1])
+            self.cardOneImage = try await networkManager.fetchImage(for: cards[0])
+            self.cardTwoImage = try await networkManager.fetchImage(for: cards[1])
             self.isShowingHand = true
             
-            //Prevent incrementing the score if the users' card values are the same
-            if cards[0].rank != cards[1].rank {
-                adjustScore(cards[0].rank, cards[1].rank)
-            }
+            adjustScore(cards[0].rank, cards[1].rank)
         } catch {
             throw NetworkingError.invalidData
         }

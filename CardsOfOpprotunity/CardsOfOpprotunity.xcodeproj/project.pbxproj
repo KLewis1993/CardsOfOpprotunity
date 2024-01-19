@@ -22,6 +22,9 @@
 		1B83D8322B58EA5E007840F8 /* CardSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8312B58EA5E007840F8 /* CardSelectionView.swift */; };
 		1B83D8342B58F229007840F8 /* CardGameNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8332B58F229007840F8 /* CardGameNetworkManager.swift */; };
 		1B83D8362B58FDB6007840F8 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8352B58FDB6007840F8 /* View+Extensions.swift */; };
+		1BD4FB9D2B5A3EA800A482A7 /* PlayerScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4FB9C2B5A3EA800A482A7 /* PlayerScoreTests.swift */; };
+		1BD4FB9F2B5A48CC00A482A7 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4FB9E2B5A48CC00A482A7 /* MockNetworkManager.swift */; };
+		1BD4FBA12B5A49E200A482A7 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4FBA02B5A49E200A482A7 /* NetworkingTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		1B83D8312B58EA5E007840F8 /* CardSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionView.swift; sourceTree = "<group>"; };
 		1B83D8332B58F229007840F8 /* CardGameNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameNetworkManager.swift; sourceTree = "<group>"; };
 		1B83D8352B58FDB6007840F8 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		1BD4FB9C2B5A3EA800A482A7 /* PlayerScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreTests.swift; sourceTree = "<group>"; };
+		1BD4FB9E2B5A48CC00A482A7 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		1BD4FBA02B5A49E200A482A7 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				188B8CB12B55E6CE00913535 /* CardsOfOpprotunityTests.swift */,
+				1BD4FB9C2B5A3EA800A482A7 /* PlayerScoreTests.swift */,
+				1BD4FB9E2B5A48CC00A482A7 /* MockNetworkManager.swift */,
+				1BD4FBA02B5A49E200A482A7 /* NetworkingTests.swift */,
 			);
 			path = CardsOfOpprotunityTests;
 			sourceTree = "<group>";
@@ -338,7 +347,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD4FB9F2B5A48CC00A482A7 /* MockNetworkManager.swift in Sources */,
 				188B8CB22B55E6CE00913535 /* CardsOfOpprotunityTests.swift in Sources */,
+				1BD4FB9D2B5A3EA800A482A7 /* PlayerScoreTests.swift in Sources */,
+				1BD4FBA12B5A49E200A482A7 /* NetworkingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
