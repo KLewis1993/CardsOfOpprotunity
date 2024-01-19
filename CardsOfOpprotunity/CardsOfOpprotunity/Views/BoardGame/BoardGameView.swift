@@ -33,7 +33,11 @@ struct BoardGameView: View {
             VStack {
                 Spacer()
                 LoadingButton(title: viewModel.buttonTitle) {
-                    await viewModel.fetchCardImages()
+                    do {
+                        try await viewModel.revealCards()
+                    } catch {
+                        
+                    }
                 }
                 .disabled(viewModel.isAnyCardUnselected)
                 .opacity(viewModel.isAnyCardUnselected ? 0.8 : 1)
