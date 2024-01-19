@@ -18,23 +18,26 @@ struct LoadingButton: View {
         Button(action: {
             executeAction()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 if isLoading {
                     showProgressView = true
                 }
             }
-            
         }) {
             ZStack {
                 if showProgressView {
                     ProgressView()
                 } else {
                     Text(title)
+                    
                 }
             }
             .frame(minWidth: 100, maxWidth: 200)
             .padding()
             .foregroundColor(showProgressView ? .clear : .white)
+            .transaction { transaction in
+                transaction.animation = nil
+            }
         }
         .buttonStyle(LoadingButtonStyle())
         .disabled(isLoading)
