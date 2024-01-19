@@ -1,5 +1,5 @@
 //
-//  CardsOfOpprotunityApp.swift
+//  CardsOfOpportunityApp.swift
 //  CardsOfOpprotunity
 //
 //  Created by kendrick lewis on 1/15/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct CardsOfOpprotunityApp: App {
+struct CardsOfOpportunityApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

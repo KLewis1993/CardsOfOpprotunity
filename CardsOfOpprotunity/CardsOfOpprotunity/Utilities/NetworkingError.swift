@@ -16,12 +16,17 @@ enum NetworkingError: Error {
 
     var userFriendlyMessage: String {
         switch self {
+        case .badBaseURL:
+            return "There's a connection issue. Please check your internet connection and try again."
+        case .invalidData:
+            return "We encountered a problem processing the data. Please try again later."
+        case .badBuiltURL:
+            return "There was an error in processing your request. Please try again."
         case .invalidServerResponse:
-            return "Invalid server response."
+            return "We received an unexpected response from our server. Please try again shortly."
         case .decodingError:
-            return "Failed to decode data."
-        default:
-            return "An error occurred. Please try again."
+            return "An error occurred while displaying your cards. Please try again."
         }
     }
 }
+
