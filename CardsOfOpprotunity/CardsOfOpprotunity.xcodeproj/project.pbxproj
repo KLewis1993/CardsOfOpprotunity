@@ -8,13 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		188B8CA12B55E6CD00913535 /* CardsOfOpportunityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CA02B55E6CD00913535 /* CardsOfOpportunityApp.swift */; };
-		188B8CA32B55E6CD00913535 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CA22B55E6CD00913535 /* ContentView.swift */; };
 		188B8CA52B55E6CE00913535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188B8CA42B55E6CE00913535 /* Assets.xcassets */; };
 		188B8CA82B55E6CE00913535 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188B8CA72B55E6CE00913535 /* Preview Assets.xcassets */; };
 		188B8CB22B55E6CE00913535 /* CardsOfOpprotunityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CB12B55E6CE00913535 /* CardsOfOpprotunityTests.swift */; };
 		188B8CBC2B55E6CE00913535 /* CardsOfOpprotunityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CBB2B55E6CE00913535 /* CardsOfOpprotunityUITests.swift */; };
 		188B8CBE2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CBD2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift */; };
-		18906F232B5B35C6004DCA2A /* SetUpViews in Resources */ = {isa = PBXBuildFile; fileRef = 18906F222B5B35C6004DCA2A /* SetUpViews */; };
 		1B5E716A2B5789D300C3920B /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5E71692B5789D300C3920B /* NetworkingError.swift */; };
 		1B5E716C2B5796DB00C3920B /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5E716B2B5796DB00C3920B /* GameViewModel.swift */; };
 		1B5E716F2B57975800C3920B /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5E716E2B57975800C3920B /* Card.swift */; };
@@ -23,6 +21,8 @@
 		1B83D8322B58EA5E007840F8 /* CardSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8312B58EA5E007840F8 /* CardSelectionView.swift */; };
 		1B83D8342B58F229007840F8 /* CardGameNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8332B58F229007840F8 /* CardGameNetworkManager.swift */; };
 		1B83D8362B58FDB6007840F8 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8352B58FDB6007840F8 /* View+Extensions.swift */; };
+		1BB1ED202B5B65F50091A43E /* OddsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1ED1E2B5B65F50091A43E /* OddsView.swift */; };
+		1BB1ED212B5B65F50091A43E /* GameDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB1ED1F2B5B65F50091A43E /* GameDataModel.swift */; };
 		1BD4FB9D2B5A3EA800A482A7 /* PlayerScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4FB9C2B5A3EA800A482A7 /* PlayerScoreTests.swift */; };
 		1BD4FB9F2B5A48CC00A482A7 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4FB9E2B5A48CC00A482A7 /* MockNetworkManager.swift */; };
 		1BD4FBA12B5A49E200A482A7 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4FBA02B5A49E200A482A7 /* NetworkingTests.swift */; };
@@ -48,7 +48,6 @@
 /* Begin PBXFileReference section */
 		188B8C9D2B55E6CD00913535 /* CardsOfOpprotunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsOfOpprotunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188B8CA02B55E6CD00913535 /* CardsOfOpportunityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpportunityApp.swift; sourceTree = "<group>"; };
-		188B8CA22B55E6CD00913535 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		188B8CA42B55E6CE00913535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		188B8CA72B55E6CE00913535 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		188B8CAD2B55E6CE00913535 /* CardsOfOpprotunityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsOfOpprotunityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +55,6 @@
 		188B8CB72B55E6CE00913535 /* CardsOfOpprotunityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsOfOpprotunityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188B8CBB2B55E6CE00913535 /* CardsOfOpprotunityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpprotunityUITests.swift; sourceTree = "<group>"; };
 		188B8CBD2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpprotunityUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		18906F222B5B35C6004DCA2A /* SetUpViews */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SetUpViews; sourceTree = "<group>"; };
 		1B5E71692B5789D300C3920B /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 		1B5E716B2B5796DB00C3920B /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		1B5E716E2B57975800C3920B /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -65,6 +63,8 @@
 		1B83D8312B58EA5E007840F8 /* CardSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionView.swift; sourceTree = "<group>"; };
 		1B83D8332B58F229007840F8 /* CardGameNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameNetworkManager.swift; sourceTree = "<group>"; };
 		1B83D8352B58FDB6007840F8 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		1BB1ED1E2B5B65F50091A43E /* OddsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OddsView.swift; path = ../../../../../../.Trash/OddsView.swift; sourceTree = "<group>"; };
+		1BB1ED1F2B5B65F50091A43E /* GameDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameDataModel.swift; path = ../../../../../../.Trash/GameDataModel.swift; sourceTree = "<group>"; };
 		1BD4FB9C2B5A3EA800A482A7 /* PlayerScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScoreTests.swift; sourceTree = "<group>"; };
 		1BD4FB9E2B5A48CC00A482A7 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		1BD4FBA02B5A49E200A482A7 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
@@ -98,6 +98,7 @@
 		188B8C942B55E6CD00913535 = {
 			isa = PBXGroup;
 			children = (
+				188B8CA02B55E6CD00913535 /* CardsOfOpportunityApp.swift */,
 				188B8C9F2B55E6CD00913535 /* CardsOfOpprotunity */,
 				188B8CB02B55E6CE00913535 /* CardsOfOpprotunityTests */,
 				188B8CBA2B55E6CE00913535 /* CardsOfOpprotunityUITests */,
@@ -118,7 +119,6 @@
 		188B8C9F2B55E6CD00913535 /* CardsOfOpprotunity */ = {
 			isa = PBXGroup;
 			children = (
-				188B8CA02B55E6CD00913535 /* CardsOfOpportunityApp.swift */,
 				1B5E71742B579ED400C3920B /* Resources */,
 				1B5E71712B579EAD00C3920B /* Utilities */,
 				1B5E71702B579E9900C3920B /* Views */,
@@ -167,8 +167,7 @@
 		1B5E71702B579E9900C3920B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18906F222B5B35C6004DCA2A /* SetUpViews */,
-				188B8CA22B55E6CD00913535 /* ContentView.swift */,
+				1BB1ED192B5B65720091A43E /* SetUpViews */,
 				1B5E71722B579EB600C3920B /* BoardGame */,
 				1B5E71772B57ABA200C3920B /* LoadingButton.swift */,
 			);
@@ -201,6 +200,15 @@
 				188B8CA42B55E6CE00913535 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		1BB1ED192B5B65720091A43E /* SetUpViews */ = {
+			isa = PBXGroup;
+			children = (
+				1BB1ED1F2B5B65F50091A43E /* GameDataModel.swift */,
+				1BB1ED1E2B5B65F50091A43E /* OddsView.swift */,
+			);
+			path = SetUpViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,7 +317,6 @@
 			files = (
 				188B8CA82B55E6CE00913535 /* Preview Assets.xcassets in Resources */,
 				188B8CA52B55E6CE00913535 /* Assets.xcassets in Resources */,
-				18906F232B5B35C6004DCA2A /* SetUpViews in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,13 +341,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BB1ED212B5B65F50091A43E /* GameDataModel.swift in Sources */,
 				1B83D8342B58F229007840F8 /* CardGameNetworkManager.swift in Sources */,
-				188B8CA32B55E6CD00913535 /* ContentView.swift in Sources */,
 				1B5E71782B57ABA200C3920B /* LoadingButton.swift in Sources */,
 				1B5E716C2B5796DB00C3920B /* GameViewModel.swift in Sources */,
 				1B5E716F2B57975800C3920B /* Card.swift in Sources */,
 				1B5E71762B579F0800C3920B /* BoardGameView.swift in Sources */,
 				1B83D8322B58EA5E007840F8 /* CardSelectionView.swift in Sources */,
+				1BB1ED202B5B65F50091A43E /* OddsView.swift in Sources */,
 				1B5E716A2B5789D300C3920B /* NetworkingError.swift in Sources */,
 				1B83D8362B58FDB6007840F8 /* View+Extensions.swift in Sources */,
 				188B8CA12B55E6CD00913535 /* CardsOfOpportunityApp.swift in Sources */,
