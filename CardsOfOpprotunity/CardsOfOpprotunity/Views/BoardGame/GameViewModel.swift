@@ -32,9 +32,11 @@ class GameViewModel: ObservableObject {
     
     var buttonTitle: String {
         if gameOver {
-            return "Play Again"
+            return "Play Again?"
         } else if isShowingHand {
             return "Draw Again"
+        } else if userSelectedCards {
+            return "Select Cards"
         } else {
             return "Draw"
         }
