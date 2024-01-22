@@ -10,62 +10,74 @@ import SwiftUI
 struct OddsView: View {
     @StateObject var gameData = GameData()
     @State private var showingRules = false
-
+    
     var body: some View {
         NavigationView {
-            VStack {
-                Text("What are the Odds?")
-                    .font(.largeTitle)
-                    .padding()
-
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Name Of Players")
-                        .font(.title)
-                        .frame(maxWidth: .infinity, alignment: .center)
+            VStack(alignment: .center) {
+                VStack(alignment: .leading, spacing: 18) {
+                    Text("What are\nthe Odds?")
+                        .font(.largeTitle.bold())
+                    
                     TextField("Player 1 Name", text: $gameData.playerOneName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-
+                        .modifier(CustomTextFieldStyle())
+                    
                     TextField("Player 2 Name", text: $gameData.playerTwoName)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
+                        .modifier(CustomTextFieldStyle())
+                        .padding(.bottom)
+                    
+                    Text("Whats on the line?")
+                        .font(.title.bold())
+                    
+                    ZStack(alignment: .topLeading) {
+                        TextEditor(text: $gameData.enteredBet)
+                            .padding(4)
+                            .opacity(gameData.enteredBet.isEmpty ? 0.25 : 1)
+                            .animation(.default, value: gameData.enteredBet.isEmpty)
+                        
+                        if gameData.enteredBet.isEmpty {
+                            Text("Example: Take out the trash")
+                                .foregroundColor(.gray)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 12)
+                                .allowsHitTesting(false)
+                        }
+                    }
+                    .frame(maxHeight: 100)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color.gray, lineWidth: 0.5)
+                    )
                     
                     HStack {
-                        Text("Whats on the line?")
-                            .padding(.leading)
                         Spacer()
-                        Button("Rules") {
+                        
+                        Button(action: {
                             showingRules = true
-                        }
-                        .padding()
-                        .sheet(isPresented: $showingRules, content: {
-                            RulesView()
-                                .border(Color.black)
+                        }, label: {
+                            HStack {
+                                Image(systemName: "info.circle")
+                                Text("Rules")
+                            }
                         })
                     }
-                    
-                    TextField("Ex: Take out the trash", text: $gameData.enteredBet)
-                        .frame(minHeight: 80)
-                        .padding(.horizontal, 4)
-                        .background(Color.white)
-                        .cornerRadius(5)
-                        .shadow(radius: 1)
-                        .padding(.horizontal)
-                    
                 }
                 .padding()
-
+                .sheet(isPresented: $showingRules){
+                    RulesView()
+                }
+                .presentationDetents([.medium])
+                
                 Spacer()
                 NavigationLink(destination: BoardGameView()) {
-                    Text("Next")
-                        .font(.headline)
+                    Text("Continue")
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.main.bounds.width - 50, height: 50)
-                        .background(Color.orange)
-                        .cornerRadius(10)
+                        .frame(width: 250)
+                        .padding()
+                        .background(Color.blue)
                 }
-                .hidden(!gameData.isBothNamesEntered)
-                .disabled(!gameData.isBothNamesEntered)
+                .clipShape(Capsule())
+                .hidden(!gameData.isGameSetupReady)
+                .disabled(!gameData.isGameSetupReady)
                 .padding(.bottom)
             }
         }
@@ -74,46 +86,38 @@ struct OddsView: View {
 
 struct RulesView: View {
     @Environment(\.presentationMode) var presentationMode
-
+    
     var body: some View {
-        VStack {
+        VStack(spacing: 18) {
             HStack {
                 Text("Rules")
-                    .font(.largeTitle)
-                    .bold()
+                    .font(.title2)
                 Spacer()
-                Button("Done") {
+                Button(action: {
                     presentationMode.wrappedValue.dismiss()
-                }
+                }, label: {
+                    Image(systemName: "x.circle.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundStyle(Color.primary)
+                })
             }
             .padding()
             
             Text("Quick Break Down")
-                .font(.title)
-                .padding()
+                .font(.title.bold())
             
-            Text("Highest card value earns a point\nFirst player to reach 2 points wins the game")
+            Text("Highest card value earns a point\nFirst player to reach 3 points wins the game")
+                .font(.body)
                 .multilineTextAlignment(.center)
-                .padding()
             
             Spacer()
             
             Image("rulesImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .padding()
-            
-            Spacer()
         }
-        .navigationBarBackButtonHidden(true) // Hides the default back button
-        .navigationBarHidden(true) // Hides the navigation bar if you want a custom look
-    }
-}
-
-
-struct OddsView_Previews: PreviewProvider {
-    static var previews: some View {
-        OddsView()
+        .padding()
     }
 }
 

@@ -29,10 +29,10 @@ struct LoadingButton: View {
                     ProgressView()
                 } else {
                     Text(title)
-                    
+                        .foregroundStyle(.white)
                 }
             }
-            .frame(minWidth: 100, maxWidth: 200)
+            .frame(width: 250)
             .padding()
             .foregroundColor(showProgressView ? .clear : .white)
             .transaction { transaction in

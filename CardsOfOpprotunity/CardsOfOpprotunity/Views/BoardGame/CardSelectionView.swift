@@ -39,7 +39,5 @@ struct CardSelectionView: View {
 
 
 #Preview {
-    @State var selectedCardIndex: Int? = nil
-    
-    return CardSelectionView(selectedCardIndex: $selectedCardIndex, isOffsetPositive: true)
+    CardSelectionView(selectedCardIndex: .constant(1), isOffsetPositive: true)
 }
