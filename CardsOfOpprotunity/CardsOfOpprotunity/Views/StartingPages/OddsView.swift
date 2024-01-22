@@ -15,7 +15,7 @@ struct OddsView: View {
         NavigationView {
             VStack(alignment: .center) {
                 VStack(alignment: .leading, spacing: 18) {
-                    Text("What are\nthe Odds?")
+                    Text("Lets play\nthe game")
                         .font(.largeTitle.bold())
                     
                     TextField("Player 1 Name", text: $gameData.playerOneName)
@@ -25,7 +25,7 @@ struct OddsView: View {
                         .modifier(CustomTextFieldStyle())
                         .padding(.bottom)
                     
-                    Text("Whats on the line?")
+                    Text("What's on the line?")
                         .font(.title.bold())
                     
                     ZStack(alignment: .topLeading) {
