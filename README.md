@@ -6,7 +6,6 @@
 ## Features
 
 - [x] SwiftUI  
-- [x] Swift Data
 - [x] REST API Integration with [Deck of Cards API](https://deckofcardsapi.com)
 - [x] Animation
 
