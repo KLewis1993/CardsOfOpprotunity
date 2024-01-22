@@ -69,3 +69,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 *.xcuserstate
 .DS_Store
+*.xcuserstate
