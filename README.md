@@ -32,7 +32,7 @@ This app relies on a stable internet connection to obtain a user's cards from th
 
 3. **Settle the Wager**: The loser completes the agreed-upon task or decision, adding a playful twist to everyday choices.
 
-This app showcases smooth integrations with SwiftUI, Swift Data, REST API, and animations. It's a great example of how a simple concept can be turned into an engaging mobile experience.
+This app showcases smooth integrations with SwiftUI, REST API, and animations. It's a great example of how a simple concept can be turned into an engaging mobile experience.
 
 ## Authors
 
