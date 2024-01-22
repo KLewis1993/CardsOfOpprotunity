@@ -12,7 +12,7 @@ class GameData: ObservableObject {
     @Published var playerTwoName: String = ""
     @Published var enteredBet: String = ""
     
-    var isBothNamesEntered: Bool {
+    var isGameSetupReady: Bool {
         !playerOneName.isEmpty && !playerTwoName.isEmpty && !enteredBet.isEmpty
     }
 }
