@@ -76,9 +76,13 @@ struct OddsView: View {
                         .background(Color.blue)
                 }
                 .clipShape(Capsule())
-                .hidden(!gameData.isGameSetupReady)
+                .opacity(gameData.isGameSetupReady ? 1 : 0.6)
                 .disabled(!gameData.isGameSetupReady)
                 .padding(.bottom)
+                Text("Providing missing information\n in order to continue")
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(Color.secondary)
+                    .hidden(gameData.isGameSetupReady)
             }
         }
     }

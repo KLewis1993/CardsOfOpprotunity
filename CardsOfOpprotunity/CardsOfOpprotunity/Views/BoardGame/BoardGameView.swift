@@ -39,7 +39,7 @@ struct BoardGameView: View {
                     }
                 }
                 .disabled(viewModel.userSelectedCards)
-                .opacity(viewModel.userSelectedCards ? 0.8 : 1)
+                .opacity(viewModel.userSelectedCards ? 0.6 : 1)
                 .animation(.easeInOut, value: viewModel.userSelectedCards)
                 Spacer()
             }
