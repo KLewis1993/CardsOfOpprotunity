@@ -19,6 +19,8 @@ class GameViewModel: ObservableObject {
     @Published var alertMessage: String = ""
     @Published var gameOver: Bool = false
     @Published var showAlert: Bool = false
+    @Published var playerOneRank: Int = 0
+    @Published var playerTwoRank: Int = 0
     
     private var networkManager: CardGameNetworkManagerProtocol
     
@@ -49,6 +51,8 @@ class GameViewModel: ObservableObject {
         cardTwoImage = nil
         firstSelectedCardIndex = nil
         secondSelectedCardIndex = nil
+        playerOneRank = 0
+        playerTwoRank = 0
     }
     
     func fetchCards() async -> [Card] {
@@ -76,10 +80,10 @@ class GameViewModel: ObservableObject {
         
         if playerOneScore > playerTwo {
             //TODO: Add a UI element to display who won
-            print("Player 1 Won with: \(playerOneScore)")
+            print( "Player 1 Won with: \(playerOneRank)")
         } else {
             //TODO: Add a UI element to display who won
-            print("Player 2 Won with: \(playerTwoScore)")
+            print( "Player 2 Won with: \(playerTwoRank)")
         }
     }
     
@@ -96,6 +100,8 @@ class GameViewModel: ObservableObject {
         }
         
         determineOutcome(playerOneScore, playerTwoScore)
+        playerOneRank = cardOneRank
+        playerTwoRank = cardTwoRank
     }
     
     func revealCards() async throws {
