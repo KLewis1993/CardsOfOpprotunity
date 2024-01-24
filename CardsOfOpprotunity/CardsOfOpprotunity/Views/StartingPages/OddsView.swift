@@ -115,6 +115,21 @@ struct RulesView: View {
                 .font(.body)
                 .multilineTextAlignment(.center)
             
+            Divider()
+            
+            Text("Understanding Card Values")
+                .font(.headline)
+            
+            VStack(alignment: .leading, spacing: 10) {
+                Text("2-10: Face value")
+                Text("Ace = 1")
+                Text("Jack = 11")
+                Text("Queen = 12")
+                Text("King = 13")
+            }
+            .font(.body)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            
             Spacer()
             
             Image("rulesImage")
