@@ -68,7 +68,7 @@ struct OddsView: View {
                 .presentationDetents([.medium])
                 
                 Spacer()
-                NavigationLink(destination: BoardGameView()) {
+                NavigationLink(destination:BoardGameView(gameData: gameData)) {
                     Text("Continue")
                         .foregroundColor(.white)
                         .frame(width: 250)
@@ -127,4 +127,8 @@ struct RulesView: View {
 
 #Preview {
     OddsView()
+}
+
+#Preview("RulesView") {
+    RulesView()
 }

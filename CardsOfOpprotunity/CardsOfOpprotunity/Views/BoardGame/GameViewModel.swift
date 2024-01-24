@@ -19,6 +19,8 @@ class GameViewModel: ObservableObject {
     @Published var alertMessage: String = ""
     @Published var gameOver: Bool = false
     @Published var showAlert: Bool = false
+    @Published var playerOneRank: Int = 0
+    @Published var playerTwoRank: Int = 0
     
     private var networkManager: CardGameNetworkManagerProtocol
     
@@ -42,6 +44,16 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    var resultText: String {
+        if playerOneRank > playerTwoRank {
+            return "Player One Wins with \(playerOneRank)"
+        } else if playerTwoRank > playerOneRank {
+            return "Player Two Wins with \(playerTwoRank)"
+        } else {
+            return "It's a Tie!"
+        }
+    }
+    
     func resetBoard() {
         gameOver = false
         isShowingHand = false
@@ -49,6 +61,15 @@ class GameViewModel: ObservableObject {
         cardTwoImage = nil
         firstSelectedCardIndex = nil
         secondSelectedCardIndex = nil
+        playerOneRank = 0
+        playerTwoRank = 0
+    }
+    
+    func startNewRound() {
+        firstSelectedCardIndex = nil
+        secondSelectedCardIndex = nil
+        cardOneImage = nil
+        cardTwoImage = nil
     }
     
     func fetchCards() async -> [Card] {
@@ -76,10 +97,10 @@ class GameViewModel: ObservableObject {
         
         if playerOneScore > playerTwo {
             //TODO: Add a UI element to display who won
-            print("Player 1 Won with: \(playerOneScore)")
+            print( "Player 1 Won with: \(playerOneRank)")
         } else {
             //TODO: Add a UI element to display who won
-            print("Player 2 Won with: \(playerTwoScore)")
+            print( "Player 2 Won with: \(playerTwoRank)")
         }
     }
     
@@ -89,13 +110,18 @@ class GameViewModel: ObservableObject {
             return
         }
         
-        if cardOneRank > cardTwoRank {
+        if cardOneRank > cardTwoRank { //if card one is greater
             playerOneScore += 1
-        } else {
+        } else if cardOneRank < cardTwoRank { //if card two is greater
+            playerTwoScore += 1
+        } else { //tie game
+            playerOneScore += 1
             playerTwoScore += 1
         }
         
         determineOutcome(playerOneScore, playerTwoScore)
+        playerOneRank = cardOneRank
+        playerTwoRank = cardTwoRank
     }
     
     func revealCards() async throws {
@@ -111,6 +137,7 @@ class GameViewModel: ObservableObject {
             self.isShowingHand = true
             
             adjustScore(cards[0].rank, cards[1].rank)
+
         } catch {
             throw NetworkingError.invalidData
         }
