@@ -62,14 +62,13 @@ struct BoardGameView: View {
                     LoadingButton(title: viewModel.buttonTitle) {
                         do {
                             try await viewModel.revealCards()
-                            //showingResults = true
                             viewModel.isShowingHand = true
                         } catch {
                             
                         }
                     }
                     .disabled(viewModel.userSelectedCards)
-                    .opacity(viewModel.userSelectedCards ? 0.8 : 1)
+                    .opacity(viewModel.userSelectedCards ? 0.6 : 1)
                     .animation(.easeInOut, value: viewModel.userSelectedCards)
                     .padding()
                     
@@ -98,7 +97,6 @@ struct BoardGameView: View {
                 ResultsView(viewModel: viewModel)
                     .frame(width: 350, height: 700)
                     .background(Color.white)
-                   // .border(Color.black, width: 2)
                     .cornerRadius(20).shadow(radius:20)
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
@@ -107,7 +105,7 @@ struct BoardGameView: View {
             }
         }
         .transition(.opacity)
-        .animation(.easeInOut, value: viewModel.isShowingHand) // Animate the transition
+        .animation(.easeInOut, value: viewModel.isShowingHand) 
     }
 }
 
@@ -135,7 +133,6 @@ struct ResultsView: View {
             Spacer()
             
             Button(action: {
-                // Action to go back
                 viewModel.startNewRound()
                 viewModel.isShowingHand = false
             }) {
@@ -145,8 +142,8 @@ struct ResultsView: View {
                     .padding()
             }
             .cornerRadius(50)
-            .background(Color.blue) // Button background color
-            .edgesIgnoringSafeArea(.bottom) // Extend the button to the bottom edge
+            .background(Color.blue)
+            .edgesIgnoringSafeArea(.bottom)
         }
         .onAppear {
             viewModel.isShowingHand = true
