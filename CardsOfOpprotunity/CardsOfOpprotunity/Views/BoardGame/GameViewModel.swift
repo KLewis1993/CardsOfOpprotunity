@@ -44,6 +44,16 @@ class GameViewModel: ObservableObject {
         }
     }
     
+    var resultText: String {
+        if playerOneRank > playerTwoRank {
+            return "Player One Wins with \(playerOneRank)"
+        } else if playerTwoRank > playerOneRank {
+            return "Player Two Wins with \(playerTwoRank)"
+        } else {
+            return "It's a Tie!"
+        }
+    }
+    
     func resetBoard() {
         gameOver = false
         isShowingHand = false
@@ -53,6 +63,13 @@ class GameViewModel: ObservableObject {
         secondSelectedCardIndex = nil
         playerOneRank = 0
         playerTwoRank = 0
+    }
+    
+    func startNewRound() {
+        firstSelectedCardIndex = nil
+        secondSelectedCardIndex = nil
+        cardOneImage = nil
+        cardTwoImage = nil
     }
     
     func fetchCards() async -> [Card] {
@@ -93,9 +110,12 @@ class GameViewModel: ObservableObject {
             return
         }
         
-        if cardOneRank > cardTwoRank {
+        if cardOneRank > cardTwoRank { //if card one is greater
             playerOneScore += 1
-        } else {
+        } else if cardOneRank < cardTwoRank { //if card two is greater
+            playerTwoScore += 1
+        } else { //tie game
+            playerOneScore += 1
             playerTwoScore += 1
         }
         
@@ -117,6 +137,7 @@ class GameViewModel: ObservableObject {
             self.isShowingHand = true
             
             adjustScore(cards[0].rank, cards[1].rank)
+
         } catch {
             throw NetworkingError.invalidData
         }
