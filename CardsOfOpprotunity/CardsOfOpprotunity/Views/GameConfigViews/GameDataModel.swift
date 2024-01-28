@@ -8,9 +8,9 @@
 import Foundation
 
 class GameData: ObservableObject {
-    @Published var playerOneName: String = ""
-    @Published var playerTwoName: String = ""
-    @Published var enteredBet: String = ""
+    @Published var playerOneName: String = "adfasdf"
+    @Published var playerTwoName: String = "334343 "
+    @Published var enteredBet: String = "Loser has to take out the trash"
     
     var isGameSetupReady: Bool {
         !playerOneName.isEmpty && !playerTwoName.isEmpty && !enteredBet.isEmpty

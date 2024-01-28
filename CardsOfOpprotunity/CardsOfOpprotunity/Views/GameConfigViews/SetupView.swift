@@ -1,5 +1,5 @@
 //
-//  OddsView.swift
+//  SetupView.swift
 //  CardsOfOpprotunity
 //
 //  Created by kendrick lewis on 1/20/24.
@@ -7,9 +7,13 @@
 
 import SwiftUI
 
-struct OddsView: View {
+struct SetupView: View {
     @StateObject var gameData = GameData()
-    @State private var showingRules = false
+    @State private var showRules: Bool = false
+    
+    init(showRules: Bool = false) {
+         self._showRules = State(initialValue: showRules)
+      }
     
     var body: some View {
         NavigationView {
@@ -42,7 +46,7 @@ struct OddsView: View {
                                 .allowsHitTesting(false)
                         }
                     }
-                    .frame(maxHeight: 100)
+                    .frame(height: 100)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
                             .stroke(Color.gray, lineWidth: 0.5)
@@ -52,7 +56,7 @@ struct OddsView: View {
                         Spacer()
                         
                         Button(action: {
-                            showingRules = true
+                            showRules = true
                         }, label: {
                             HStack {
                                 Image(systemName: "info.circle")
@@ -62,7 +66,7 @@ struct OddsView: View {
                     }
                 }
                 .padding()
-                .sheet(isPresented: $showingRules){
+                .sheet(isPresented: $showRules){
                     RulesView()
                 }
                 .presentationDetents([.medium])
@@ -79,71 +83,22 @@ struct OddsView: View {
                 .opacity(gameData.isGameSetupReady ? 1 : 0.6)
                 .disabled(!gameData.isGameSetupReady)
                 .padding(.bottom)
-                Text("Providing missing information\n in order to continue")
+                
+                Text("Providing missing information\nin order to continue")
                     .multilineTextAlignment(.center)
                     .foregroundStyle(Color.secondary)
+                    .font(.caption)
                     .hidden(gameData.isGameSetupReady)
             }
         }
     }
 }
 
-struct RulesView: View {
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        VStack(spacing: 18) {
-            HStack {
-                Text("Rules")
-                    .font(.title2)
-                Spacer()
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Image(systemName: "x.circle.fill")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .foregroundStyle(Color.primary)
-                })
-            }
-            .padding()
-            
-            Text("Quick Break Down")
-                .font(.title.bold())
-            
-            Text("Highest card value earns a point\nFirst player to reach 3 points wins the game")
-                .font(.body)
-                .multilineTextAlignment(.center)
-            
-            Divider()
-            
-            Text("Understanding Card Values")
-                .font(.headline)
-            
-            VStack(alignment: .leading, spacing: 10) {
-                Text("2-10: Face value")
-                Text("Ace = 1")
-                Text("Jack = 11")
-                Text("Queen = 12")
-                Text("King = 13")
-            }
-            .font(.body)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Spacer()
-            
-            Image("rulesImage")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        }
-        .padding()
-    }
+
+#Preview("Typical") {
+    SetupView()
 }
 
-#Preview {
-    OddsView()
-}
-
-#Preview("RulesView") {
-    RulesView()
+#Preview("Showing Rules") {
+    SetupView(showRules: true)
 }
