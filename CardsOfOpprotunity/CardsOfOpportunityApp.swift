@@ -11,7 +11,7 @@ import SwiftUI
 struct CardsOfOpportunityApp: App {
     var body: some Scene {
         WindowGroup {
-           OddsView()
+           SetupView()
         }
     }
 }

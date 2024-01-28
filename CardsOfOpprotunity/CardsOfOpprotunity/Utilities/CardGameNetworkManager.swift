@@ -10,7 +10,6 @@ import SwiftUI
 protocol CardGameNetworkManagerProtocol {
     func fetchCards() async throws -> [Card]
     func fetchImage(for card: Card) async throws -> Image?
-
 }
 
 struct CardGameNetworkManager: CardGameNetworkManagerProtocol {

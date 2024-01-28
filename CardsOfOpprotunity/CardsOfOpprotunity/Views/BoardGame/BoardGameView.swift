@@ -16,147 +16,72 @@ struct BoardGameView: View {
     var body: some View {
         ZStack {
             VStack() {
-                HStack() {
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            Image(systemName: "chevron.backward")
-                            Text("Back")
-                                .foregroundColor(.blue)
-                        }
-                    }
-                    .padding(.leading, 20)
-                    
-                    Spacer()
-                    
-                    Text("Current Bet:")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .padding(.trailing, 70)
-                    
-                    Spacer()
-                }
-               
-                Text("\(gameData.enteredBet)")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                
                 VStack(spacing: 0) {
-                    CardSelectionView(selectedCardIndex: $viewModel.firstSelectedCardIndex, isOffsetPositive: true)
-                        .scaledToFit()
+                    CardDisplayView(
+                        selectedCardIndex: $viewModel.firstCardIndex,
+                        cardImage: viewModel.cardOneImage,
+                        isOffsetPositive: true
+                    )
                     
-                    HStack{
-                        Text("Player 1: \(gameData.playerOneName)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 0)
-                            .font(.title2.bold())
-                            .padding()
-                        Text("Score: \(viewModel.playerOneScore)")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .padding()
-                    }
+                    PlayerDetails(playerName: gameData.playerOneName, playerScore: viewModel.playerOneScore)
                     
                     LoadingButton(title: viewModel.buttonTitle) {
-                        do {
-                            try await viewModel.revealCards()
-                            viewModel.isShowingHand = true
-                        } catch {
-                            
-                        }
+                        await viewModel.revealCards()
                     }
                     .disabled(viewModel.userSelectedCards)
                     .opacity(viewModel.userSelectedCards ? 0.6 : 1)
                     .animation(.easeInOut, value: viewModel.userSelectedCards)
                     .padding()
                     
-                    HStack {
-                        Text("Player 2: \(gameData.playerTwoName)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading)
-                            .font(.title2.bold())
-                        Text("Score: \(viewModel.playerTwoScore)")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .padding()
-                    }
+                    PlayerDetails(playerName: gameData.playerTwoName, playerScore: viewModel.playerTwoScore)
                     
-                    CardSelectionView(selectedCardIndex: $viewModel.secondSelectedCardIndex, isOffsetPositive: false)
-                        .scaledToFit()
+                    CardDisplayView(
+                        selectedCardIndex: $viewModel.secondCardIndex,
+                        cardImage: viewModel.cardTwoImage,
+                        isOffsetPositive: false)
                 }
                 Spacer()
-                }
+            }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .navigationBarBackButtonHidden(true)
+            
             .alert(isPresented: $viewModel.showAlert) {
                 Alert(title: Text("Error"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
-        }
-            if viewModel.isShowingHand {
-                ResultsView(viewModel: viewModel)
-                    .frame(width: 350, height: 700)
-                    .background(Color.white)
-                    .cornerRadius(20).shadow(radius:20)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.black, lineWidth: 5)
-                    )
             }
+            .sheet(isPresented: $viewModel.gameOver) {
+                GameOverView(
+                    playerOneName: gameData.playerOneName,
+                    playerTwoName: gameData.playerTwoName,
+                    playerOneScore: viewModel.playerOneScore,
+                    playerTwoScore: viewModel.playerTwoScore,
+                    bet: gameData.enteredBet
+                )
+                
+            }
+            .presentationDetents([.medium])
         }
-        .transition(.opacity)
-        .animation(.easeInOut, value: viewModel.isShowingHand) 
     }
 }
 
-struct ResultsView: View {
-    @ObservedObject var viewModel = GameViewModel()
+private struct CardDisplayView: View {
+    @Binding var selectedCardIndex: Int?
+    var cardImage: Image?
+    var isOffsetPositive: Bool
     
     var body: some View {
-        VStack {
-            Spacer()
-            
-            (viewModel.cardOneImage ?? Image("cardBack"))
+        if cardImage == nil {
+            CardSelectionView(selectedCardIndex: $selectedCardIndex, isOffsetPositive: isOffsetPositive)
+                .scaledToFit()
+        } else {
+            (cardImage ?? Image("cardBack"))
                 .resizable()
                 .scaledToFit()
-                .padding(.horizontal)
-
-            Text(viewModel.resultText)
-                .font(.title.bold())
-                .padding(.vertical)
-
-            (viewModel.cardTwoImage ?? Image("cardBack"))
-                .resizable()
-                .scaledToFit()
-                .padding(.horizontal)
-            
-            Spacer()
-            
-            Button(action: {
-                viewModel.startNewRound()
-                viewModel.isShowingHand = false
-            }) {
-                Text("Done")
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-            }
-            .cornerRadius(50)
-            .background(Color.blue)
-            .edgesIgnoringSafeArea(.bottom)
-        }
-        .onAppear {
-            viewModel.isShowingHand = true
+                .frame(height: 200)
         }
     }
 }
 
 #Preview {
     BoardGameView(gameData: GameData())
-}
-
-#Preview("ResultView") {
-    ResultsView(viewModel: GameViewModel())
 }
 
 
