@@ -47,7 +47,7 @@ struct BoardGameView: View {
             .alert(isPresented: $viewModel.showAlert) {
                 Alert(title: Text("Error"), message: Text(viewModel.alertMessage), dismissButton: .default(Text("OK")))
             }
-            .sheet(isPresented: $viewModel.gameOver) {
+            .sheet(isPresented: $viewModel.showGameOverAlert) {
                 GameOverView(
                     playerOneName: gameData.playerOneName,
                     playerTwoName: gameData.playerTwoName,
@@ -55,9 +55,7 @@ struct BoardGameView: View {
                     playerTwoScore: viewModel.playerTwoScore,
                     bet: gameData.enteredBet
                 )
-                
             }
-            .presentationDetents([.medium])
         }
     }
 }

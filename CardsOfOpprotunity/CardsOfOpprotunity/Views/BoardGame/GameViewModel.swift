@@ -18,6 +18,7 @@ class GameViewModel: ObservableObject {
     @Published var isShowingHand: Bool = false
     @Published var alertMessage: String = ""
     @Published var gameOver: Bool = false
+    @Published var showGameOverAlert: Bool = false
     @Published var showAlert: Bool = false
     
     private var networkManager: CardGameNetworkManagerProtocol
@@ -71,6 +72,7 @@ class GameViewModel: ObservableObject {
         }
         
         self.gameOver = true
+        self.showGameOverAlert = true
     }
     
     func adjustScore(_ cardOneRank: Int, _ cardTwoRank: Int) {

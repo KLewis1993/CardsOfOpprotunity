@@ -69,7 +69,6 @@ struct SetupView: View {
                 .sheet(isPresented: $showRules){
                     RulesView()
                 }
-                .presentationDetents([.medium])
                 
                 Spacer()
                 NavigationLink(destination:BoardGameView(gameData: gameData)) {

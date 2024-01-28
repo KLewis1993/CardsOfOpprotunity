@@ -57,5 +57,10 @@ struct GameOverView: View {
 
 
 #Preview {
-    GameOverView(playerOneName: "Arnold", playerTwoName: "Helga", playerOneScore: 2, playerTwoScore: 3, bet: "Take out the trash")
+    GameOverView(
+        playerOneName: "Arnold",
+        playerTwoName: "Helga",
+        playerOneScore: 2, playerTwoScore: 3,
+        bet: "Take out the trash"
+    )
 }
