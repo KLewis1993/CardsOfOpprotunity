@@ -10,8 +10,6 @@ import SwiftUI
 struct BoardGameView: View {
     @ObservedObject var viewModel = GameViewModel()
     @ObservedObject var gameData: GameData
-    @Environment(\.presentationMode) var presentationMode
-    @State private var showingResults = false
     
     var body: some View {
         ZStack {
@@ -22,8 +20,10 @@ struct BoardGameView: View {
                         cardImage: viewModel.cardOneImage,
                         isOffsetPositive: true
                     )
+                    .accessibilityLabel(viewModel.isShowingHand ? "Cards face down" : "Card face view")
                     
                     PlayerDetails(playerName: gameData.playerOneName, playerScore: viewModel.playerOneScore)
+                        .accessibilityLabel("Player one section")
                     
                     LoadingButton(title: viewModel.buttonTitle) {
                         await viewModel.revealCards()
@@ -32,13 +32,25 @@ struct BoardGameView: View {
                     .opacity(viewModel.userSelectedCards ? 0.6 : 1)
                     .animation(.easeInOut, value: viewModel.userSelectedCards)
                     .padding()
+                    .accessibilityLabel("Draw button")
+                    .accessibilityAction(named: Text("Reveal Cards")) {
+                        if !viewModel.userSelectedCards {
+                            Task {
+                                await viewModel.revealCards()
+                            }
+                        }
+                    }
+                    .accessibilityHint("Tap to reveal cards if both players have selected a card. This action is only available when the draw button is enabled.")
+                    
                     
                     PlayerDetails(playerName: gameData.playerTwoName, playerScore: viewModel.playerTwoScore)
+                        .accessibilityLabel("Player two section")
                     
                     CardDisplayView(
                         selectedCardIndex: $viewModel.secondCardIndex,
                         cardImage: viewModel.cardTwoImage,
                         isOffsetPositive: false)
+                    .accessibilityLabel(viewModel.isShowingHand ? "Cards face down" : "Card face view")
                 }
                 Spacer()
             }
