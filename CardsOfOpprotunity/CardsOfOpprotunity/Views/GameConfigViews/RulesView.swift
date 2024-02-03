@@ -15,15 +15,9 @@ struct RulesView: View {
             HStack {
                 Text("Rules")
                     .font(.title2)
+                    .accessibilityAddTraits(.isHeader)
                 Spacer()
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Image(systemName: "x.circle.fill")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .foregroundStyle(Color.primary)
-                })
+                DismissButton()
             }
             .padding()
             
@@ -33,6 +27,7 @@ struct RulesView: View {
             Text("Highest card value earns a point\nFirst player to reach 3 points wins the game")
                 .font(.body)
                 .multilineTextAlignment(.center)
+              
             
             Divider()
             
@@ -48,12 +43,14 @@ struct RulesView: View {
             }
             .font(.body)
             .frame(maxWidth: .infinity, alignment: .leading)
-            
+            .accessibilityElement(children: .combine)
             Spacer()
             
             Image("rulesImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .accessibilityLabel(Text("Illustration of card values"))
+                .accessibilityAddTraits(.isImage)
         }
         .padding()
     }

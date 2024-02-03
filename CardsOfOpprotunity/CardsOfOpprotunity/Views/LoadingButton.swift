@@ -41,6 +41,7 @@ struct LoadingButton: View {
         }
         .buttonStyle(LoadingButtonStyle())
         .disabled(isLoading)
+        .accessibilityAddTraits(.isButton)
     }
     
     private func executeAction() {

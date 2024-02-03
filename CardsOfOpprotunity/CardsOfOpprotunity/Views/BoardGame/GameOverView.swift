@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameOverView: View {
-    @Environment(\.presentationMode) var presentationMode
+    
     var playerOneName: String
     var playerTwoName: String
     var playerOneScore: Int
@@ -20,19 +20,13 @@ struct GameOverView: View {
             HStack {
                 Spacer()
                 
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Image(systemName: "x.circle.fill")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                        .foregroundStyle(Color.primary)
-                })
+                DismissButton()
             }
             
             Text("Game Over")
                 .font(.largeTitle.bold())
                 .padding()
+                .accessibilityAddTraits(.isHeader)
             
             let winnerName = playerOneScore > playerTwoScore ? playerOneName : playerTwoName
             let loserName = playerOneScore > playerTwoScore ? playerTwoName : playerOneName
@@ -48,6 +42,7 @@ struct GameOverView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityElement(children: .combine)
             
             Spacer()
         }

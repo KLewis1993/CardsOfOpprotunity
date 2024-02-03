@@ -21,10 +21,11 @@ struct SetupView: View {
                 VStack(alignment: .leading, spacing: 18) {
                     Text("Lets play\nthe game")
                         .font(.largeTitle.bold())
+                        .accessibilityAddTraits(.isHeader)
                     
                     TextField("Player 1 Name", text: $gameData.playerOneName)
                         .modifier(CustomTextFieldStyle())
-                    
+                        
                     TextField("Player 2 Name", text: $gameData.playerTwoName)
                         .modifier(CustomTextFieldStyle())
                         .padding(.bottom)
@@ -63,6 +64,7 @@ struct SetupView: View {
                                 Text("Rules")
                             }
                         })
+                        .accessibilityAddTraits(.isButton)
                     }
                 }
                 .padding()
@@ -82,6 +84,7 @@ struct SetupView: View {
                 .opacity(gameData.isGameSetupReady ? 1 : 0.6)
                 .disabled(!gameData.isGameSetupReady)
                 .padding(.bottom)
+                .accessibilityAddTraits(.isButton)
                 
                 Text("Providing missing information\nin order to continue")
                     .multilineTextAlignment(.center)

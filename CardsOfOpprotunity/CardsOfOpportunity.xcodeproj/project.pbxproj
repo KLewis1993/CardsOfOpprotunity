@@ -23,6 +23,7 @@
 		1B83D8322B58EA5E007840F8 /* CardSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8312B58EA5E007840F8 /* CardSelectionView.swift */; };
 		1B83D8342B58F229007840F8 /* CardGameNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8332B58F229007840F8 /* CardGameNetworkManager.swift */; };
 		1B83D8362B58FDB6007840F8 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B83D8352B58FDB6007840F8 /* View+Extensions.swift */; };
+		1B85FF8B2B6DDC11006FB1C9 /* DismissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B85FF8A2B6DDC11006FB1C9 /* DismissButton.swift */; };
 		1BA3B3292B661CBC00FA2955 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA3B3282B661CBC00FA2955 /* GameOverView.swift */; };
 		1BA63B7A2B60BCEB0003E42C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA63B792B60BCEB0003E42C /* LaunchScreen.storyboard */; };
 		1BCA26272B63654500075717 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCA26262B63654500075717 /* RulesView.swift */; };
@@ -69,6 +70,7 @@
 		1B83D8312B58EA5E007840F8 /* CardSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionView.swift; sourceTree = "<group>"; };
 		1B83D8332B58F229007840F8 /* CardGameNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameNetworkManager.swift; sourceTree = "<group>"; };
 		1B83D8352B58FDB6007840F8 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		1B85FF8A2B6DDC11006FB1C9 /* DismissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissButton.swift; sourceTree = "<group>"; };
 		1BA3B3282B661CBC00FA2955 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		1BA63B792B60BCEB0003E42C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BCA26262B63654500075717 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				1BCA26282B63687700075717 /* GameConfigViews */,
 				1B5E71722B579EB600C3920B /* BoardGame */,
 				1B5E71772B57ABA200C3920B /* LoadingButton.swift */,
+				1B85FF8A2B6DDC11006FB1C9 /* DismissButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B83D8342B58F229007840F8 /* CardGameNetworkManager.swift in Sources */,
+				1B85FF8B2B6DDC11006FB1C9 /* DismissButton.swift in Sources */,
 				1B5E71782B57ABA200C3920B /* LoadingButton.swift in Sources */,
 				1BCA262A2B636A0600075717 /* PlayerDetails.swift in Sources */,
 				1B5E716C2B5796DB00C3920B /* GameViewModel.swift in Sources */,
