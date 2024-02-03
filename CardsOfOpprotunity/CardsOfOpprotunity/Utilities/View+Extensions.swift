@@ -28,7 +28,6 @@ struct ConditionalHiddenModifier: ViewModifier {
 import SwiftUI
 
 struct CustomTextFieldStyle: ViewModifier {
-    
     func body(content: Content) -> some View {
         content
             .padding()

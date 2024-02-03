@@ -91,7 +91,6 @@ class GameViewModel: ObservableObject {
     }
     
     func revealCards() async {
-        
         if isShowingHand {
             resetBoard()
             return

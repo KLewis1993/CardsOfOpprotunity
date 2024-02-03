@@ -1,6 +1,6 @@
 //
-//  CardsOfOpprotunityTests.swift
-//  CardsOfOpprotunityTests
+//  CardsOfOpportunityTests.swift
+//  CardsOfOpportunityTests
 //
 //  Created by kendrick lewis on 1/15/24.
 //
@@ -8,7 +8,7 @@
 import XCTest
 @testable import CardsOfOpprotunity
 
-final class CardsOfOpprotunityTests: XCTestCase {
+final class CardsOfOpportunityTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

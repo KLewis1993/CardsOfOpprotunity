@@ -10,7 +10,7 @@
 		188B8CA12B55E6CD00913535 /* CardsOfOpportunityApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CA02B55E6CD00913535 /* CardsOfOpportunityApp.swift */; };
 		188B8CA52B55E6CE00913535 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188B8CA42B55E6CE00913535 /* Assets.xcassets */; };
 		188B8CA82B55E6CE00913535 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188B8CA72B55E6CE00913535 /* Preview Assets.xcassets */; };
-		188B8CB22B55E6CE00913535 /* CardsOfOpprotunityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CB12B55E6CE00913535 /* CardsOfOpprotunityTests.swift */; };
+		188B8CB22B55E6CE00913535 /* CardsOfOpportunityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CB12B55E6CE00913535 /* CardsOfOpportunityTests.swift */; };
 		188B8CBC2B55E6CE00913535 /* CardsOfOpprotunityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CBB2B55E6CE00913535 /* CardsOfOpprotunityUITests.swift */; };
 		188B8CBE2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B8CBD2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift */; };
 		18F090692B5C79B7006F250E /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F090682B5C79B7006F250E /* SetupView.swift */; };
@@ -50,13 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		188B8C9D2B55E6CD00913535 /* CardsOfOpprotunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsOfOpprotunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		188B8C9D2B55E6CD00913535 /* CardsOfOpportunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsOfOpportunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188B8CA02B55E6CD00913535 /* CardsOfOpportunityApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpportunityApp.swift; sourceTree = "<group>"; };
 		188B8CA42B55E6CE00913535 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		188B8CA72B55E6CE00913535 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		188B8CAD2B55E6CE00913535 /* CardsOfOpprotunityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsOfOpprotunityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		188B8CB12B55E6CE00913535 /* CardsOfOpprotunityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpprotunityTests.swift; sourceTree = "<group>"; };
-		188B8CB72B55E6CE00913535 /* CardsOfOpprotunityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsOfOpprotunityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		188B8CAD2B55E6CE00913535 /* CardsOfOpportunityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsOfOpportunityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		188B8CB12B55E6CE00913535 /* CardsOfOpportunityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpportunityTests.swift; sourceTree = "<group>"; };
+		188B8CB72B55E6CE00913535 /* CardsOfOpportunityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsOfOpportunityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188B8CBB2B55E6CE00913535 /* CardsOfOpprotunityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpprotunityUITests.swift; sourceTree = "<group>"; };
 		188B8CBD2B55E6CE00913535 /* CardsOfOpprotunityUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsOfOpprotunityUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		18F090682B5C79B7006F250E /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetupView.swift; path = CardsOfOpprotunity/Views/GameConfigViews/SetupView.swift; sourceTree = SOURCE_ROOT; };
@@ -118,9 +118,9 @@
 		188B8C9E2B55E6CD00913535 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				188B8C9D2B55E6CD00913535 /* CardsOfOpprotunity.app */,
-				188B8CAD2B55E6CE00913535 /* CardsOfOpprotunityTests.xctest */,
-				188B8CB72B55E6CE00913535 /* CardsOfOpprotunityUITests.xctest */,
+				188B8C9D2B55E6CD00913535 /* CardsOfOpportunity.app */,
+				188B8CAD2B55E6CE00913535 /* CardsOfOpportunityTests.xctest */,
+				188B8CB72B55E6CE00913535 /* CardsOfOpportunityUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 		188B8CB02B55E6CE00913535 /* CardsOfOpprotunityTests */ = {
 			isa = PBXGroup;
 			children = (
-				188B8CB12B55E6CE00913535 /* CardsOfOpprotunityTests.swift */,
+				188B8CB12B55E6CE00913535 /* CardsOfOpportunityTests.swift */,
 				1BD4FB9C2B5A3EA800A482A7 /* PlayerScoreTests.swift */,
 				1BD4FB9E2B5A48CC00A482A7 /* MockNetworkManager.swift */,
 				1BD4FBA02B5A49E200A482A7 /* NetworkingTests.swift */,
@@ -226,9 +226,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		188B8C9C2B55E6CD00913535 /* CardsOfOpprotunity */ = {
+		188B8C9C2B55E6CD00913535 /* CardsOfOpportunity */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 188B8CC12B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpprotunity" */;
+			buildConfigurationList = 188B8CC12B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpportunity" */;
 			buildPhases = (
 				188B8C992B55E6CD00913535 /* Sources */,
 				188B8C9A2B55E6CD00913535 /* Frameworks */,
@@ -238,14 +238,14 @@
 			);
 			dependencies = (
 			);
-			name = CardsOfOpprotunity;
+			name = CardsOfOpportunity;
 			productName = CardsOfOpprotunity;
-			productReference = 188B8C9D2B55E6CD00913535 /* CardsOfOpprotunity.app */;
+			productReference = 188B8C9D2B55E6CD00913535 /* CardsOfOpportunity.app */;
 			productType = "com.apple.product-type.application";
 		};
-		188B8CAC2B55E6CE00913535 /* CardsOfOpprotunityTests */ = {
+		188B8CAC2B55E6CE00913535 /* CardsOfOpportunityTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 188B8CC42B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpprotunityTests" */;
+			buildConfigurationList = 188B8CC42B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpportunityTests" */;
 			buildPhases = (
 				188B8CA92B55E6CE00913535 /* Sources */,
 				188B8CAA2B55E6CE00913535 /* Frameworks */,
@@ -256,14 +256,14 @@
 			dependencies = (
 				188B8CAF2B55E6CE00913535 /* PBXTargetDependency */,
 			);
-			name = CardsOfOpprotunityTests;
+			name = CardsOfOpportunityTests;
 			productName = CardsOfOpprotunityTests;
-			productReference = 188B8CAD2B55E6CE00913535 /* CardsOfOpprotunityTests.xctest */;
+			productReference = 188B8CAD2B55E6CE00913535 /* CardsOfOpportunityTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		188B8CB62B55E6CE00913535 /* CardsOfOpprotunityUITests */ = {
+		188B8CB62B55E6CE00913535 /* CardsOfOpportunityUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 188B8CC72B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpprotunityUITests" */;
+			buildConfigurationList = 188B8CC72B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpportunityUITests" */;
 			buildPhases = (
 				188B8CB32B55E6CE00913535 /* Sources */,
 				188B8CB42B55E6CE00913535 /* Frameworks */,
@@ -274,9 +274,9 @@
 			dependencies = (
 				188B8CB92B55E6CE00913535 /* PBXTargetDependency */,
 			);
-			name = CardsOfOpprotunityUITests;
+			name = CardsOfOpportunityUITests;
 			productName = CardsOfOpprotunityUITests;
-			productReference = 188B8CB72B55E6CE00913535 /* CardsOfOpprotunityUITests.xctest */;
+			productReference = 188B8CB72B55E6CE00913535 /* CardsOfOpportunityUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -302,7 +302,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 188B8C982B55E6CD00913535 /* Build configuration list for PBXProject "CardsOfOpprotunity" */;
+			buildConfigurationList = 188B8C982B55E6CD00913535 /* Build configuration list for PBXProject "CardsOfOpportunity" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -315,9 +315,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				188B8C9C2B55E6CD00913535 /* CardsOfOpprotunity */,
-				188B8CAC2B55E6CE00913535 /* CardsOfOpprotunityTests */,
-				188B8CB62B55E6CE00913535 /* CardsOfOpprotunityUITests */,
+				188B8C9C2B55E6CD00913535 /* CardsOfOpportunity */,
+				188B8CAC2B55E6CE00913535 /* CardsOfOpportunityTests */,
+				188B8CB62B55E6CE00913535 /* CardsOfOpportunityUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -376,7 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BD4FB9F2B5A48CC00A482A7 /* MockNetworkManager.swift in Sources */,
-				188B8CB22B55E6CE00913535 /* CardsOfOpprotunityTests.swift in Sources */,
+				188B8CB22B55E6CE00913535 /* CardsOfOpportunityTests.swift in Sources */,
 				1BD4FB9D2B5A3EA800A482A7 /* PlayerScoreTests.swift in Sources */,
 				1BD4FBA12B5A49E200A482A7 /* NetworkingTests.swift in Sources */,
 			);
@@ -396,12 +396,12 @@
 /* Begin PBXTargetDependency section */
 		188B8CAF2B55E6CE00913535 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 188B8C9C2B55E6CD00913535 /* CardsOfOpprotunity */;
+			target = 188B8C9C2B55E6CD00913535 /* CardsOfOpportunity */;
 			targetProxy = 188B8CAE2B55E6CE00913535 /* PBXContainerItemProxy */;
 		};
 		188B8CB92B55E6CE00913535 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 188B8C9C2B55E6CD00913535 /* CardsOfOpprotunity */;
+			target = 188B8C9C2B55E6CD00913535 /* CardsOfOpportunity */;
 			targetProxy = 188B8CB82B55E6CE00913535 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -532,11 +532,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"CardsOfOpprotunity/Preview Content\"";
 				DEVELOPMENT_TEAM = L7AYJDAX2C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CardsOfOpportunity;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -567,11 +568,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"CardsOfOpprotunity/Preview Content\"";
 				DEVELOPMENT_TEAM = L7AYJDAX2C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = CardsOfOpportunity;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -612,7 +614,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardsOfOpprotunity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CardsOfOpprotunity";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardsOfOpportunity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CardsOfOpportunity";
 			};
 			name = Debug;
 		};
@@ -632,7 +634,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardsOfOpprotunity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CardsOfOpprotunity";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CardsOfOpportunity.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CardsOfOpportunity";
 			};
 			name = Release;
 		};
@@ -675,7 +677,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		188B8C982B55E6CD00913535 /* Build configuration list for PBXProject "CardsOfOpprotunity" */ = {
+		188B8C982B55E6CD00913535 /* Build configuration list for PBXProject "CardsOfOpportunity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				188B8CBF2B55E6CE00913535 /* Debug */,
@@ -684,7 +686,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		188B8CC12B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpprotunity" */ = {
+		188B8CC12B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpportunity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				188B8CC22B55E6CE00913535 /* Debug */,
@@ -693,7 +695,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		188B8CC42B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpprotunityTests" */ = {
+		188B8CC42B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpportunityTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				188B8CC52B55E6CE00913535 /* Debug */,
@@ -702,7 +704,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		188B8CC72B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpprotunityUITests" */ = {
+		188B8CC72B55E6CE00913535 /* Build configuration list for PBXNativeTarget "CardsOfOpportunityUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				188B8CC82B55E6CE00913535 /* Debug */,

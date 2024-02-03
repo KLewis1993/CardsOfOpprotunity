@@ -1,6 +1,6 @@
 //
 //  PlayerScoreTests.swift
-//  CardsOfOpprotunityTests
+//  CardsOfOpportunityTests
 //
 //  Created by Ivan Ramirez on 1/18/24.
 //
