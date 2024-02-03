@@ -1,6 +1,6 @@
 //
 //  MockNetworkManager.swift
-//  CardsOfOpprotunityTests
+//  CardsOfOpportunityTests
 //
 //  Created by Ivan Ramirez on 1/19/24.
 //

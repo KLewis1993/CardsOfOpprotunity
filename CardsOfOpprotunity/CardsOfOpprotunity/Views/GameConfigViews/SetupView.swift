@@ -12,8 +12,8 @@ struct SetupView: View {
     @State private var showRules: Bool = false
     
     init(showRules: Bool = false) {
-         self._showRules = State(initialValue: showRules)
-      }
+        self._showRules = State(initialValue: showRules)
+    }
     
     var body: some View {
         NavigationView {
